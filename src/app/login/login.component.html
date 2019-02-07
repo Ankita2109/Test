@@ -1,0 +1,65 @@
+
+<div class="container-fluid">
+
+
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+  
+       
+  
+        <!-- <div *ngIf="status.emailExist" class="alert alert-danger">
+          <h4>Email Already Exists!</h4>
+  
+        </div> -->
+  
+        <div *ngIf="error" class="alert alert-danger">
+          <h4>Something went wrong! Retry or contact admin.</h4>
+        </div>
+  
+  <H2 style="text-align:center; float: left;">Login</H2>
+  <br>
+        <form [formGroup]="login"><br> <br>
+  
+          <!-- <div class="form-group"><b>
+              <label> Username</label>
+            </b>
+            <input type="text" class="form-control"  formControlName="name">
+            
+          </div> -->
+  
+          <div class="form-group"><b>
+              <label> EmailId</label>
+            </b>
+            <input class="form-control" id="loginemail" type="text"  formControlName="email">
+            
+          </div>
+  
+          <div class="form-group"><b>
+              <label> Password</label>
+            </b>
+            <input class="form-control" id="loginpassword" type="password"  formControlName="password">
+           
+          </div>
+           
+            <!-- <div class="form-group"><b>
+                <label>Choose Your Language</label>
+              </b>
+                <div class="input-group">
+                  
+                <select class="form-control" placeholder="Choose Your Language" formControlName="id" >
+                  <option *ngFor="let language of languageList" placeholder="Choose Your Language" [value]="language.id">{{language.name}}</option>
+                </select>
+              </div>
+             </div> -->
+             
+  
+          <input type="button" class="btn btn-primary col-lg-12 col-sm-12 col-12" id="login" value="Login" (click)= "authenticate()">
+          <div id="card3">Don't have an account!
+              <div class="text-primary"> <a  routerLink="signup" routerLinkActive="active" (click)="signup()" >signup</a></div> 
+              </div>
+        </form>
+      </div>
+      <div class="col-lg-4"></div>
+    </div>
+  </div>

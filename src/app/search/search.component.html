@@ -1,0 +1,50 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="col-lg-4">
+	<div class="row">
+		<h2>Search For News Analyst</h2>
+           <div id="custom-search-input">
+                            <div class="input-group col-md-12">
+                                <input type="text" class="  search-query form-control"  placeholder="Search"  #email/>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button" (click)="getAnalystDetail(email.value)">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+	</div>
+</div>
+</div>
+<br>
+
+<div class="col-lg-4 col-sm-12"></div>
+  <div class="col-lg-4 col-sm-12">
+<div *ngIf="isUser==true">
+  <div class="card" style="width: 18rem;border:5px solid green;" *ngIf="analyst.blacklisted == 'No' ">
+  <div class="card-body">
+    <h5 class="card-title">About News Analyst:</h5>
+    <h5> Name : {{analyst.name | uppercase}}  </h5>
+    <h5>Email : {{analyst.email}}</h5>
+    <h5>Role : {{analyst.role.userRole}}</h5>
+    <h5> Language : {{analyst.language.name| uppercase}}</h5> 
+    <button type="button" class="btn btn-success "   (click)="changeAnalystStatus(analyst.email)" >Block</button>
+  </div>
+</div>
+<div class="card" style="width: 18rem;border:5px solid red;" *ngIf="analyst.blacklisted == 'Yes'">
+  <div class="card-body">
+    <h5 class="card-title">About News Analyst:</h5>
+    <h5> Name : {{analyst.name | uppercase}}  </h5>
+    <h5>Email : {{analyst.email}}</h5>
+    <h5>Role : {{analyst.role.userRole| uppercase}}</h5>
+    <h5> Language : {{analyst.language.name| uppercase}}</h5> 
+    <button type="button" class="btn btn-danger "   (click)="changeAnalystStatus(analyst.email)" >UnBlock</button>
+  </div>
+</div>
+</div>
+</div> 
+

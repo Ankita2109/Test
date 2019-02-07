@@ -1,0 +1,96 @@
+<!-- <h2>Users</h2>
+
+<div class="container">
+  
+<div class="row">
+<div class="col-lg-6 col-md-6">
+
+    <ul *ngFor="let user of users">
+      <li>Name: {{user.name}}</li>
+    </ul>
+
+</div>
+<div class="col-lg-6 col-md-6">
+   
+    <ul *ngFor="let user of users">
+    
+      <li>Email: {{user.email}}  &nbsp;&nbsp;  <i class="fas fa-times" style="cursor:pointer;" (click)="deleteUser(user.id);"></i> </li>
+    </ul>
+
+</div>
+
+</div>
+</div>
+ -->
+
+<!-- <nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1 ">SignUp</span>
+</nav> -->
+
+<br><br>
+
+<div class="container-fluid">
+
+
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+
+      <div *ngIf="status.signupStatus" class="alert alert-success">
+        <h4>User added successfully!</h4>
+
+      </div>
+
+      <div *ngIf="status.emailExist" class="alert alert-danger">
+        <h4>Email Already Exists!</h4>
+
+       </div>
+
+      <div *ngIf="error" class="alert alert-danger">
+        <h4>Something went wrong! Retry or contact admin.</h4>
+      </div>
+
+<H2 style="text-align:center; float: left;">Sign Up</H2>
+<br>
+      <form [formGroup]="signup"><br> <br>
+
+        <div class="form-group"><b>
+            <label> Username</label>
+          </b>
+          <input type="text"  id="signupName" class="form-control"  formControlName="name">
+          
+        </div>
+
+        <div class="form-group"><b>
+            <label> EmailId</label>
+          </b>
+          <input class="form-control" id="signupemail" type="text"  formControlName="email">
+          
+        </div>
+
+        <div class="form-group" ><b>
+            <label> Password</label>
+          </b>
+          <input class="form-control" id="signuppassword"type="password"  formControlName="password">
+         
+        </div>
+        <div formGroupName=language >
+          <div class="form-group"><b>
+              <label>Choose Your Language</label>
+            </b>
+              <div class="input-group">
+                
+              <select class="form-control" id="languageid" placeholder="Choose Your Language" formControlName="id" >
+                <option *ngFor="let language of languageList" placeholder="Choose Your Language" [value]="language.id">{{language.name}}</option>
+              </select>
+            </div>
+           </div>
+           </div>
+
+        <input type="button" id="signupButton" class="btn btn-primary col-lg-12 col-sm-12 col-12" value="sign Up" (click)="addUser();">
+
+      </form>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>

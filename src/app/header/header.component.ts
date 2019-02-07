@@ -1,0 +1,18 @@
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+
+@Component({
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
+})
+export class HeaderComponent implements OnInit {
+  loggedin:boolean;
+  constructor(public service :AuthService) { }
+
+  ngOnInit() {
+    this.loggedin=this.service.getLoggedin();
+  }
+
+}
+0
